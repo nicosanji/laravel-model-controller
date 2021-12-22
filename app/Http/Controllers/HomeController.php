@@ -8,10 +8,16 @@ use App\Movie;
 
 class HomeController extends Controller
 {
-    function index()
+    // function index()
+    // {
+    //     $movies = Movie::all();
+    //     return view("index", $movies);
+    //     // dump($data);
+    // }
+
+    public function index()
     {
-        // return view("index");
-        $data = Movie::all();
-        dump($data);
+        $movies = Movie::all();
+        return view('index', ["movies" => $movies]);
     }
 }
